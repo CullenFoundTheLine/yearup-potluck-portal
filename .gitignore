@@ -3,3 +3,4 @@
 target/
 *.class
 yuu-potluck-front/
+src/main/resources/application.properties
