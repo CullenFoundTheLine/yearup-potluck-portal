@@ -14,6 +14,7 @@ public class Entry {
 
     private String name;
     private String email;
+    private boolean attending;
     private String foodItem;
     private String foodType;
     private int servings;

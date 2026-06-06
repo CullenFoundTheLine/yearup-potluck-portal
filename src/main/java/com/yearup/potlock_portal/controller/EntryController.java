@@ -14,23 +14,28 @@ public class EntryController {
     @Autowired
     private EntryRepository repository;
 
-    // GET - Colin gets all entries
+    // GET - Connor gets all entries
     @GetMapping
     public List<Entry> getAllEntries() {
         return repository.findAll();
     }
 
-    // POST - Colin adds new entry
+    // POST - Connor adds new entry
     @PostMapping
     public Entry createEntry(@RequestBody Entry entry) {
         return repository.save(entry);
     }
 
-    // PUT - Colin updates an entry
+    // PUT - Connor updates an entry
     @PutMapping("/{id}")
     public Entry updateEntry(@PathVariable String id, 
                              @RequestBody Entry entry) {
         entry.setId(id);
         return repository.save(entry);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteEntry(@PathVariable String id) {
+        repository.deleteById(id);
     }
 }
